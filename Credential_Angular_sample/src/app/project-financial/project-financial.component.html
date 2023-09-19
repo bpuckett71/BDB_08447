@@ -1,0 +1,73 @@
+<div class="landing_page_main_container" style="overflow-x: hidden; overflow-y: auto;">
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+
+  <!-- Main Header -->
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <span class="corecon-menu-logo">
+        <img class="img-responsive" src="../../../assets/images/logo-l.png">
+      </span>
+    </div>
+    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+      <span class="header-logo-text">Corecon External API Client</span>
+      <div><span>(Resource Owner Credentials:)</span></div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 text-right">
+      <a href="../../../help.html" target="_blank">
+        <i title="Knowledge Base" class="global-help-icon"></i>
+      </a>&nbsp;      
+    </div>
+  </div>
+  <div class="landing_page_sub_container_in_percentage">
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div>
+      <div class="row">
+        <div class="col-lg-4">          
+          <input type="button" value="GetCostFinancials" (click)="GetProjectFinancials('GetCostFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetCostResourceFinancials" (click)="GetProjectFinancials('GetCostResourceFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetCostPlusFinancials" (click)="GetProjectFinancials('GetCostPlusFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetUnitPriceFinancials" (click)="GetProjectFinancials('GetUnitPriceFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetRevenueFinancials" (click)="GetProjectFinancials('GetRevenueFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetHourFinancials" (click)="GetProjectFinancials('GetHourFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetHourHistorical" (click)="GetProjectFinancials('GetHourHistoricalFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetOverviewFinancials" (click)="GetProjectFinancials('GetOverviewFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetOverviewHistorical" (click)="GetProjectFinancials('GetOverviewHistoricalFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetOverviewDetail" (click)="GetProjectFinancials('GetOverviewDetailFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetWIPFinancials" (click)="GetProjectFinancials('GetWIPFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetVendorCostFinancials" (click)="GetProjectFinancials('GetVendorCostFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetChangeOrderFinancials" (click)="GetProjectFinancials('GetChangeOrderFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetFinancials" (click)="GetProjectFinancials('GetFinancials')" class="primaryButton_icon" /> <br /><br />
+          <input type="button" value="GetRetainageFinancials" (click)="GetProjectFinancials('GetRetainageFinancials')" class="primaryButton_icon" /> <br /><br />
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-12">
+              <div *ngIf="responseResult">
+                <b>API Response:</b>
+                <pre class="pre"> {{responseResult}}</pre>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div *ngIf="errorMsg">
+                <span id="errmsg">Error: {{errorMsg}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left padding_none">
+        <input type="button" value="Back to Home" (click)="goToHome()" class="primaryButton_icon" />
+      </div>
+    </div>
+  </div>
+</div>

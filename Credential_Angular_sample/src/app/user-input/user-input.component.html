@@ -1,0 +1,86 @@
+<div class="loginContainer" style="overflow-x: hidden; overflow-y: auto;">
+  <div class="vspace"></div>
+  <!-- Main Header -->
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <span class="corecon-menu-logo">
+        <img class="img-responsive" src="../../../assets/images/logo-l.png">
+      </span>
+    </div>
+    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+      <span class="header-logo-text">Corecon External API Client</span>
+      <div><span>(Resource Owner Credentials:)</span></div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 text-right">
+
+      <a href="../../../help.html" target="_blank">
+        <i title="Knowledge Base" class="global-help-icon"></i>
+      </a>
+      &nbsp;      
+    </div>
+  </div>
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+  <div class="login-wrapper">
+    <form id="form1" [formGroup]="form1" role="form">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"User Name:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" type="text" formControlName="userName" #userName placeholder="User Name" />
+        </div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Password:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" type="password" formControlName="password" #password placeholder="Password" />
+        </div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Client ID:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" type="text" formControlName="clientID" #clientID placeholder="Client ID" />
+        </div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Secret Code:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" type="text" formControlName="secretCode" #secretCode placeholder="Secret Code" />
+        </div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Scopes:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" type="text" formControlName="scopes" #scopes placeholder="Scopes" />
+        </div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-4 col-md-2 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-right">
+          <div class="vspace"></div>
+          <input type="button" value="Get Token" (click)="onClick($event)"
+                 [disabled]="form1.invalid" class="primaryButton_icon text-right" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Corecon Knowledge base</title>
+  <!--<base href="/">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    function CopyToClipboard(containerid) {
+      var range = document.createRange();
+      range.selectNode(containerid);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- Main Header -->
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+
+        <div class="vspace"></div>
+        <div class="vspace"></div>
+        <span class="corecon-menu-logo">
+          <img class="img-responsive" src="../../../assets/images/logo-l.png">
+        </span>
+      </div>
+      <div class="col-lg-10 col-md-9 col-sm-9 col-xs-6">
+
+      </div>
+    </div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="container">
+      <div class="landing_page_stats_sub_title">Credential Code authentication</div>
+      <p class="pmain">Once you have the client ID and secret code, you can request an Access Token</p>
+      <div class="landing_page_stats_sub_title_checkUps ">Steps to access token</div>
+      <div>
+        <ol>
+          <li>
+            To get access token, make an http client post call to API end point with userName, password, scopes and "password" as grant_type<br />
+            like below given sample code
+            <div class="contentdv1">
+              <div class="text-right">
+                <button type="button" onclick="CopyToClipboard(AccessToken)" class="btn helpbtn-default">
+                  <i title="Copy to clipboard" class="fa fa-clipboard"></i>
+                </button>
+              </div>
+
+              <code><pre>
+                      <div id="AccessToken">
+  getAccessToken(userName: string, password: string, clientId: string, clientSecret: string, scopes: string): Observable<IAuthToken>
+  {
+  let endpoint = 'API_URL/token';
+  const httpOptions = {
+  headers: new HttpHeaders({
+  'Content-Type': 'application/x-www-form-urlencoded',
+  'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+  })
+  };
+  const body = 'username={0}&password={1}&scope={2}&grant_type=password'
+  .replace('{0}', userName)
+  .replace('{1}', password)
+  .replace('{2}', scopes);
+  return this.http.post<IAuthToken>
+    (endpoint, body, httpOptions);
+    }
+</div>
+              </pre></code>
+            </div>
+            <var> Scope</var> " is authorization scopes like add,read,edit.
+            <div class="contentdv">
+              scope sequence should be as:<br />
+              <ul><li>add</li><li>read</li><li>edit</li><li>add,read</li><li>read,edit</li><li>add,read,edit</li></ul>
+            </div>
+          </li>
+          <li>
+            The API response takes the following form:
+            <div class="contentdv">
+              {"access_token":"Access_Token","refresh_token":"Refresh_Token",
+              "expires_in":302, "token_type":"bearer"}
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="vspace"></div>
+      <div class="landing_page_stats_sub_title_checkUps ">Generate Token from Refresh Token</div>
+      <p class="pmain">To generate the new token from refresh token</p>
+      <div class="contentdv2">
+        <div class="text-right">
+          <button type="button" onclick="CopyToClipboard(RefreshToken)" class="btn helpbtn-default">
+            <i title="Copy to clipboard" class="fa fa-clipboard"></i>
+          </button>
+        </div>
+        <code>
+          <pre>
+          <div id="RefreshToken">
+  getRefereshToken(clientId: string, clientSecret: string, refreshToken: string): Observable<IAuthToken>
+  {
+    let endpoint = 'API_URL/token';
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': '*',
+      'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+    })
+    };
+    const body = 'refresh_token={0}&grant_type=refresh_token'
+    .replace('{0}', refreshToken);
+    return this.http.post<IAuthToken> (endpoint, body, httpOptions);
+  }
+              </div>
+</pre>
+        </code>
+      </div>
+      <div class="vspace"></div>
+      <div class="landing_page_stats_sub_title_checkUps ">Corecon External API Calling</div>
+      <p class="pmain"> To access corecon external API, you will pass access token with API request</p>
+      <div class="contentdv2">
+        <div class="text-right">
+          <button type="button" onclick="CopyToClipboard(APICall)" class="btn helpbtn-default">
+            <i title="Copy to clipboard" class="fa fa-clipboard"></i>
+          </button>
+        </div>
+        <code>
+          <pre>
+          <div id="APICall">
+  getAPICallwithAuthToken(token: string): Observable<string>
+  {
+    let endpoint = environment.API_URI + "test/resource1";
+    const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': '*',
+      'Authorization': `Bearer ${token}`
+    })
+    };
+    return this.http.get<string> (endpoint, httpOptions);
+  }
+              </div>
+</pre>
+        </code>
+      </div>
+
+      <div style="width: 100%;position: relative;">
+        <p style="text-align: center;font-size: 8pt;color: #808080;" align="center">
+          Copyright ©
+          <script type="text/javascript">document.write(new Date().getUTCFullYear());</script> Corecon Technologies, Inc.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

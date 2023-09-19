@@ -1,0 +1,236 @@
+<div class="loginContainer" style="overflow-x: hidden; overflow-y: auto;">
+
+  <div class="vspace"></div>
+  <!-- Main Header -->
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <span class="corecon-menu-logo">
+        <img class="img-responsive" src="../../../assets/images/logo-l.png">
+      </span>
+    </div>
+    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
+      <span class="header-logo-text">Corecon External API Client</span>
+      <div><span>(Resource Owner Credentials:)</span></div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 text-right">
+
+      <a href="../../../help.html" target="_blank">
+        <i title="Knowledge Base" class="global-help-icon"></i>
+      </a>
+      &nbsp;      
+    </div>
+  </div>
+  <div class="login-wrapper">
+    <form id="form1" [formGroup]="form">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Project Number:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ProjectNumber" type="text" #projectNumber placeholder="Project Number" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Prime Contract Number:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="PrimeContractNumber" type="text" #primeContractNumber placeholder="Prime Contract Number" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left">
+          {{"Change Order Number:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ChangeOrderNumber" type="text" #ChangeOrderNumber placeholder="Change Order Number" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Expense Date:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ExpenseDate" type="text"
+                 #expenseDate placeholder="DD-MM-YYYY" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Expense Type:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ExpenseType" type="text" #expenseType placeholder="Expense Type" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Payment Type:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="PaymentType" type="text" #paymentType placeholder="Payment Type" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Employee Name:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="EmployeeName" type="text" #employeeName placeholder="Employee Name" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"PayeeType:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="PayeeType" type="text" #payeeType placeholder="Payee Type" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Payee Company:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="PayeeCompany" type="text" #payeeCompany placeholder="Payee Company" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Item Description:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemDescription" type="text" #itemDescription placeholder="Item Description" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"ItemUnit:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemUnit" type="text" #itemUnit placeholder="Item Unit" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Item Quantity:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemQuantity" type="text" #itemQuantity placeholder="Item Quantity" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Item UnitPrice:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemUnitPrice" type="text" #itemUnitPrice placeholder="Item UnitPrice" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Item Resource:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemResource" type="text" #itemResource placeholder="Item Resource" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Item CostCode:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemCostCode" type="text" #itemCostCode placeholder="Item CostCode" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left">
+          {{"Item TaxCode:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="ItemTaxCode" type="text" #itemTaxCode placeholder="Item TaxCode" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-left required">
+          {{"Billable Status:"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <input class="form-control" formControlName="BillableStatus" type="text" #billableStatus placeholder="Billable Status" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <div class="row">
+        <div class="col-lg-4 col-md-2 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-right">
+          <input type="button" value="Verify Data" (click)="JsonTimeData($event)"
+                 [disabled]="form.invalid" class="primaryButton_icon text-right" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      </div>
+      <div class="vspace"></div>
+    </form>
+    <div *ngIf="jsonData" class="responsedv">
+      <span id="errmsg">{{jsonData}}</span>
+    </div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div *ngIf="jsonData" class="row">
+      <div class="col-lg-4 col-md-2 col-sm-4 col-xs-6"></div>
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-right">
+        <input type="button" value="Submit" (click)="PostTimeData('Add')" class="primaryButton_icon" /> &nbsp;
+      </div>
+    </div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div *ngIf="errorMsg" class="responsedv" style="background-color: #f5bfbf;">
+      <span id="errmsg">Error: {{errorMsg}}</span>
+    </div>
+    <div *ngIf="responseResult" class="responsedv" style="background-color: #b7f5a8;">
+      <span id="responseResult">API Response: {{responseResult}}</span>
+    </div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left padding_none">
+        <input type="button" value="Back to Home" (click)="goToHome()" class="primaryButton_icon" />
+      </div>
+    </div>
+  </div>
+</div>

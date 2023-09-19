@@ -1,0 +1,12 @@
+{
+    "/api/*": {
+      "target": "https://testapiext.corecon.com",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+    
